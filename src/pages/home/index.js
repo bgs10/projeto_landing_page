@@ -3,7 +3,7 @@ import * as S from './styled';
 import imagem from './imagens/black.png'
 
 function App(props) {
-  const [ usuario, setUsuario]  =   ('')
+  const [ usuario, setUsuario]  = useState('');
   const [ erro, setErro] = useState(false);
   
   const localStorageEmails = JSON.parse(localStorage.getItem('emails'));
@@ -15,7 +15,7 @@ function App(props) {
       emails.push({usuario});
       setErro(false);
       localStorage.setItem('emails', JSON.stringify(emails));
-      
+      setUsuario('');
     }else{
       console.log('erro');
       setErro(true);
